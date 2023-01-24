@@ -1,7 +1,8 @@
 package test.on.Git;
 
 import java.util.*;
-public class Main
+public class HalfDiamondPattern
+	
 {
 	public static void main(String[] args) {
 	 	Scanner sc=new Scanner(System.in);
