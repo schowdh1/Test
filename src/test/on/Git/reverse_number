@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int show=0;
+
+	while(n != 0)  {
+	   
+	    show=n%10;
+	     n=n/10;
+		if(show!=0)
+		System.out.print(show);
+	}
+	}
+}
