@@ -1,0 +1,27 @@
+import java.util.*;
+public class secondLargest {  
+
+    public static int secondLargestElement(int[] arr) {
+    	//Your code goes here
+
+      if(arr.length<=1)
+      {
+          return -2147483648;
+      }
+
+     Arrays.sort(arr);
+     for (int i = arr.length - 2; i >= 0; i--)
+  {
+ 
+    if (arr[i] != arr[arr.length - 1])
+    {
+     
+      return arr[i];
+    }
+  }
+
+  return -2147483648;
+
+    }
+
+}
