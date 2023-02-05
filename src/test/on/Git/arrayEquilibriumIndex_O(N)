@@ -1,0 +1,65 @@
+public class Solution {
+
+	public static int arrayEquilibriumIndex(int[] arr){  
+		//Your code goes here
+		int index=0;
+		int leftSum=0;
+		int rightSum=0;
+		int totalsum=0;
+		int i=0;
+
+		while(i<arr.length)
+		{
+		 totalsum+=arr[i];
+		 i++;
+		}
+
+		while(index<arr.length)
+		{
+         
+		 rightSum=totalsum-arr[index]-leftSum;
+
+		 if(rightSum==leftSum)
+		 {
+			 return index;
+		 }
+
+		 leftSum+=arr[index];
+		 index++;
+
+		}
+	return -1;	
+	}
+}
+
+
+
+
+
+
+
+
+
+/*
+		while(i<arr.length)
+		{
+          leftSum=0;
+		  rightSum=0;
+	
+           for(int k=0;k<i;k++) 
+		   {
+			   leftSum+=arr[k];
+		   }
+		   for(int k=arr.length-1;k>i;k--)
+		   {
+             rightSum+=arr[k];
+		   }
+         
+         	  if(leftSum==rightSum && leftSum!=0 && rightSum!=0)
+		  {
+			 return i;
+		  }
+		  
+			  i++;
+
+		}*/
