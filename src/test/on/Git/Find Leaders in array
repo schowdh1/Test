@@ -1,0 +1,27 @@
+public class Solution {
+
+	public static void leaders(int[] input) {
+		/* Your class should be named Solution 
+		 * Don't write main(). 
+		 * Don't read input, it is passed as function argument. 
+		 * Print output and don't return it. 
+		 * Taking input is handled automatically. 
+		 */
+int rightMax=input[input.length-1];
+String out=rightMax+" ";
+  for (int i = input.length-2; i>=0; i--) {
+   if(input[i] >= rightMax)
+   {
+    rightMax=input[i];
+   out+=rightMax+" ";
+   }
+
+  }	
+
+  out.trim();
+  System.out.print(out);
+
+	}
+  }
+
+	
