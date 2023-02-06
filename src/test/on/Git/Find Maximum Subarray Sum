@@ -1,0 +1,43 @@
+
+/* Find Maximum Subarray Sum
+Send Feedback
+You are given an integer array, arr, of size N and a positive integer K. Out of all subarrays of 'arr' of size K, find the sum of the subarray that has the maximum sum.
+Input format:
+The first line of the input contains two space-separated integers, N and K
+The second line contains N space-separated integers which represent the elements of the array, arr
+Output format:
+The output only consists of a single integer, the sum of the subarray that has the maximum sum
+Constraints:*/
+
+import java.util.*;
+public class Solution {
+
+  public static int sumOfSubarray(int arr[], int n, int k)
+  {
+    int sum = 0;
+
+    for (int i = 0; i + k <= n; i++) {
+      int temp = 0;
+      for (int j = i; j < i + k; j++) {
+        temp += arr[j];
+      }
+      if (temp > sum)
+        sum = temp;
+    }
+    return sum;
+  }
+    public static void main(String[] args) {
+		// Write your code here
+
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int k=sc.nextInt();
+    int[] arr = new int[n];
+    for(int i=0;i<n;i++)
+    {
+       arr[i]=sc.nextInt();
+    }
+    int sum = sumOfSubarray(arr, n, k);
+    System.out.println(sum);
+    }
+}
