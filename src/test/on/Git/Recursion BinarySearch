@@ -1,0 +1,39 @@
+public class Main
+{
+    
+    public static int binarySearch(int a[],int startIndex,int lastIndex,int numbertoSearch)
+    {
+        
+        if(startIndex>lastIndex)
+        {
+            return -1;
+        }
+        
+        int mid=(startIndex+lastIndex)/2;
+        if(a[mid]==numbertoSearch)
+        {
+            return mid;
+        }
+        
+        else if(a[mid]>numbertoSearch)
+        {
+           return binarySearch(a,startIndex,mid-1,numbertoSearch);
+        }
+        else if (a[mid]<numbertoSearch)
+        {
+            return binarySearch(a,mid+1,lastIndex,numbertoSearch);
+        }
+        
+        return -1;
+    }
+	public static void main(String[] args) {
+	    
+	    int[] arr ={1,2,3,4,5,6};
+	    
+	    int result=binarySearch(arr,0,5,6);
+	    System.out.print(result);
+	    
+	    
+		
+	}
+}
